@@ -37,6 +37,14 @@ describe('createResponse', () => {
       });
   }); 
 
+  it('returns the /blue route with blue as header', () => {
+    return request(app)
+      .get('/blue')
+      .then(res => {
+        expect(res.text).toEqual('<h1>blue</h1>');
+      });
+  }); 
+
 }); 
 
 
