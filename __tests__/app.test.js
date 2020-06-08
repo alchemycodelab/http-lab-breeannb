@@ -29,6 +29,14 @@ describe('createResponse', () => {
       });
   }); 
 
+  it('returns the /green route with green as header', () => {
+    return request(app)
+      .get('/green')
+      .then(res => {
+        expect(res.text).toEqual('<h1>green</h1>');
+      });
+  }); 
+
 }); 
 
 
