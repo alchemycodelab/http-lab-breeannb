@@ -21,13 +21,15 @@ describe('createResponse', () => {
       });
   });
 
+  it('returns the /red route with red as header', () => {
+    return request(app)
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>red</h1>');
+      });
+  }); 
+
 }); 
 
-//   it('returns the /red route with red as header', () => {
-//     return request(app)
-//       .get('/')
-//       .then(res => {
-//         expect(res.text).toEqual('<h1>red</h1>');
-//       });
-//   }); 
+
 
