@@ -15,14 +15,13 @@ describe('createResponse', () => {
 
     return request(app)
       .post('/echo')
+      .send('hello')
       .then(res => {
-        expect(res.body).toEqual({
-          body: , 
-          status: '200 OK', 
-          contentType: 'text/html'
-        });
+        expect(res.text).toEqual('hello');
       });
-  }); 
+  });
+
+}); 
 
 //   it('returns the /red route with red as header', () => {
 //     return request(app)
@@ -32,4 +31,3 @@ describe('createResponse', () => {
 //       });
 //   }); 
 
-});
